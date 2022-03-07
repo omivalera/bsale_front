@@ -1,1 +1,1 @@
-web: npm start --log-file -
+web: npm start
