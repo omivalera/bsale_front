@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="css/styles.css"/>
+
+    <title>Desafio Bsale</title>
+</head>
+
+<body>
+
+    <!-- JUMBOTRON -->
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12 col-sm-6">
+                    <h1><a id="title" href="/">Bsale Test</a></h1>
+                </div>
+                <!-- Dropdown Categories -->
+                <div class="col-12 col-sm-6">
+                    <div class="row">
+                        <div class="dropdown col-12 col-lg-6 justify-content-center">
+                            <button class="dropdown-toggle btn btn-outline-dark col-12" type="button" id="dropdownCategories"
+                                data-toggle="dropdown" aria-expanded="false">
+                                <span class="fa fa-bars"></span><span class="text-uppercase text-truncate" 
+                                    id="selectedCategory" style="width: 8rem;"> Sort by Category</span> 
+                            </button>
+                            <ul class="dropdown-menu col-11" id="categories_menu" aria-labelledby="dropdownCategories">
+                                <!-- Categories Insertion -->
+                            </ul>
+                        </div>
+                        <!-- Search Bar -->
+                        <form class="navbar-form col-12 col-lg-6 align-self-center" role="search">
+                            <div class="form-inline">
+                                <input type="text" class="form-control col-10"
+                                    id="searchKeyword" placeholder="... looking for?">
+                                <button type="submit" class="btn btn-outline-dark col-2" id="searchButton">
+                                    <span class="fa fa-search"></span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>           
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container row row-content border col-10 offset-1 mt-3 justify-content-center">  
+        <!-- Dropdown ordering search option -->
+        <div class="dropdown col-12 col-sm-5 mt-3">
+            <label>Order by: </label>
+            <button class="dropdown-toggle btn btn-sm border-light" type="button" id="dropdownOrderingType"
+                data-toggle="dropdown" aria-expanded="false">
+                <span class="text-truncate" 
+                    id="selectedOrdering" style="width: 8rem;">Category</span> 
+            </button>
+            <ul class="dropdown-menu" id="ordering_menu" aria-labelledby="dropdownOrderingType">
+                <li><a id="ord-category_id"
+                    onClick="setOrdering('category_id')"
+                    class="dropdown-item active" role="button">Category</a>
+                </li>
+                <li><a id="ord-name"
+                    onClick="setOrdering('name')"
+                    class="dropdown-item" role="button">A - Z</a>
+                </li>
+                <li><a id="ord--name"
+                    onClick="setOrdering('-name')"
+                    class="dropdown-item" role="button">Z - A</a>
+                </li>
+                <li><a id="ord-price"
+                    onClick="setOrdering('price')"
+                    class="dropdown-item" role="button">Lower price first</a>
+                </li>
+                <li><a id="ord--price"
+                    onClick="setOrdering('-price')"
+                    class="dropdown-item" role="button">Higher price first</a>
+                </li>
+            </ul>
+        </div>
+
+        
+        <!-- Top Pagination -->
+        <div class="col-12 col-sm-5 mt-3">
+            <nav >
+                <ul class="pagination pagination-sm justify-content-center paginationBar" id="paginationBar">
+                    <!-- NavBar Pagination Insertion -->
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+
+    <!-- Products Cards -->
+    <div class="container">
+        
+        <div class="row justify-content-center" id="products">
+            <!-- Cards Insertion -->
+        </div>
+    </div>
+
+    <!-- Bottom Pagination -->
+    <div class="container mt-5 mb-5">
+        <nav >
+            <ul class="pagination pagination-sm justify-content-center paginationBar" id="paginationBar">
+                <!-- NavBar Pagination Insertion -->
+            </ul>
+          </nav>
+    </div>
+    
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">               
+                <div class="col-7 col-sm-5">
+                    <address>
+		              Región Metropolitana de Santiago, Chile<br>
+		              Tel. ☎: +56 9 37720653<br>
+		              Email 📧: <a href="mailto:omivalera@gmail.com">omivalera@gmail.com</a>
+		           </address>
+                </div>
+                <div class="col-12 col-sm-4 align-self-right">
+                    <div class="text-right">
+                        <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                    </div>
+                </div>
+           </div>
+           <div class="row justify-content-center">             
+                <div class="col-auto">
+                    <p>© Copyright by omivalera 👽</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>
