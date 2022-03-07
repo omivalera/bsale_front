@@ -10,9 +10,8 @@
   },
   "author": "Richard Omi",
   "license": "ISC",
-  "devDependencies": {
-    "lite-server": "^2.6.1"
-  },
+  "lite-server": "^2.6.1",
+
   "dependencies": {
     "ajax": "^0.0.4",
     "bootstrap": "^4.6.0",
