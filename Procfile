@@ -1,1 +1,3 @@
-web: npm start --log-file -
+web: 
+npm install
+npm start --log-file -
