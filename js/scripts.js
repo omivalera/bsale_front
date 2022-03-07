@@ -13,7 +13,7 @@ var PAGINATION = {
 // Search results ordering
 var ORDERING = 'category_id';
 // Product Categories
-var CATEGORIES = { 0 : 'Todo Producto'}
+var CATEGORIES = { 0 : ''}
 
 const baseURL = 'https://testapibsale.herokuapp.com/?format=api';
 const URL_QUERY = baseURL + "list/";
