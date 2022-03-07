@@ -15,7 +15,7 @@ var ORDERING = 'category_id';
 // Product Categories
 var CATEGORIES = { 0 : 'Todo Producto'}
 
-const baseURL = 'https://testapibsale.herokuapp.com/';
+const baseURL = 'https://testapibsale.herokuapp.com/?format=api';
 const URL_QUERY = baseURL + "list/";
 
 jQuery.ajaxSetup({
