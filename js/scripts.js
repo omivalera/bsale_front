@@ -50,10 +50,11 @@ $(document).ready(function() {
         return false;
     });
 });
-
+   
+// Search Products related to search keyword from REST API, updates pagination,
+// render Products card and pagination bar
 function searchProducts(category = 0, page = 1, search = '') {
-    // Search Products related to search keyword from REST API, updates pagination,
-    // render Products card and pagination bar
+
 
     let cat_path = (category === 0) ? '' : category + '/';
     let search_path = 'search=' + search;
