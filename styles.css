@@ -1,0 +1,68 @@
+#title {
+    color: #28a745;
+    text-shadow: 1px 1px 3px rgb(10, 106, 185);
+    text-align: left;
+}
+
+
+
+/* Product images */
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: scale-down;
+}
+
+.jumbotron {
+    margin: 0px auto;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background: rgb(36, 34, 34);
+    color: rgb(255, 0, 0);
+    
+ }
+
+.footer {
+    background-color: rgb(36, 34, 34);
+    margin: 20px auto;
+    padding: 20px 0px; 
+    color: rgb(255, 255, 255);
+}
+
+.page-link {
+    color: #121212;
+}
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* Product images */
+    .card-img-top {
+        width: 100%;
+        height: 30vw;
+        object-fit: scale-down;
+    }
+}
+
+/********** Small devices only **********/
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    /* Product images */
+    .card-img-top {
+        width: 100%;
+        height: 30vw;
+        object-fit: scale-down;
+    }
+  }
+  
+ /********** Extra small devices only **********/
+@media (max-width: 767px) {
+
+    /* Product images */
+    .card-img-top {
+        width: 100%;
+        height: 50vw;
+        object-fit: scale-down;
+    }  
+}
