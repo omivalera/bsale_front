@@ -26,11 +26,11 @@ Links de la Api
 </aside>
 
 <aside>
-🖥️ 🚨 Cambiar en el archivo `scripts.js`la variable `base_URL` que vendrá con el valor del deploy.
-Se debe colocar en su lugar  “[http://127.0.0.1:8000/”](http://127.0.0.1:8000/%E2%80%9D)
+🖥️ 🚨 Cambiar en el archivo (scripts.js) la variable (base_URL)` que vendrá con el valor del deploy.
+Se debe colocar en su lugar (http://127.0.0.1:8000/)
 
 </aside>
 
 Notion 
 
-[Bsale_Front_Doc](https://www.notion.so/Bsale_Front_Doc-d89edb92b5f44c9588e507218c01ea24)
+[Bsale_Front_Doc](https://cottony-verbena-d1b.notion.site/Bsale_Front_Doc-d89edb92b5f44c9588e507218c01ea24)
