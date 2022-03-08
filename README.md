@@ -8,11 +8,13 @@ La implementación  del cliente que consume la API-REST de django-rest es median
 
 Links de la Api
 
-`{
-"products": "[https://testapibsale.herokuapp.com/products/?format=api](https://testapibsale.herokuapp.com/products/?format=api)",
-"groups": "[https://testapibsale.herokuapp.com/categories/?format=api](https://testapibsale.herokuapp.com/categories/?format=api)",
-"categories": "[https://testapibsale.herokuapp.com/categories/?format=api](https://testapibsale.herokuapp.com/categories/?format=api)"
-}`
+
+[Products](https://testapibsale.herokuapp.com/products/?format=api)
+
+[Groups](https://testapibsale.herokuapp.com/categories/?format=api)
+
+[Categories](https://testapibsale.herokuapp.com/categories/?format=api)
+
 
 ### Al clonar el repositorio y antes de inicializar la REST-API es MUY IMPORTANTE
 
