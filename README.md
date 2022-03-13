@@ -22,7 +22,8 @@ Links de la Api
 ---
 
 <aside>
-🖥️ 🚨 Eliminar el archivo **bs-config.js este forma parte del deploy en remoto**
+🖥️ 🚨 Eliminar el archivo **bs-c
+onfig.js este forma parte del deploy en remoto**
 
 </aside>
 

@@ -67,7 +67,7 @@ function searchProducts(category = 0, page = 1, search = '') {
     console.log(url);
     $("#products").append(
         `<div class="container justify-content-center col-12" id="loader">
-            <h5 class="text-primary text-center " >Buscando Lo que buscas...</h5>
+            <h5 class="text-primary text-center " >Cargando... 🔃</h5>
         </div>`
     );
     $.ajax({
