@@ -8,10 +8,11 @@ La implementación  del cliente que consume la API-REST de django-rest es median
 
 Links de la Api
 
+[List](https://testapibsale.herokuapp.com/list/?format=api)
 
 [Products](https://testapibsale.herokuapp.com/products/?format=api)
 
-[Groups](https://testapibsale.herokuapp.com/categories/?format=api)
+[Groups](https://testapibsale.herokuapp.com/groups/?format=api)
 
 [Categories](https://testapibsale.herokuapp.com/categories/?format=api)
 
@@ -31,6 +32,3 @@ Se debe colocar en su lugar (http://127.0.0.1:8000/)
 
 </aside>
 
-Notion 
-
-[Bsale_Front_Doc](https://cottony-verbena-d1b.notion.site/Bsale_Front_Doc-d89edb92b5f44c9588e507218c01ea24)
