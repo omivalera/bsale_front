@@ -1,5 +1,3 @@
-evaluation/__pycache__/*
-store/migrations/__pycache__/*
-store/__pycache__/*
+
 package.json
 package-lock.json

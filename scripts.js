@@ -1,4 +1,4 @@
-// Global pagination object values
+// Paginacion global
 var PAGINATION = {
     search: '',
     totalRecords: 0,
@@ -9,15 +9,17 @@ var PAGINATION = {
     previous: null,
     category: 0,
 }
-
-// Search results ordering
 var ORDERING = 'category_id';
-// Product Categories
-var CATEGORIES = { 0: 'Todo Producto' }
+// var CATEGORIES = { 0: 'Todo Producto' }
 
+
+
+
+//Constante BaseURL y URL_Query igualada a baseurl + el endpoint /list/
 const baseURL = 'https://testapibsale.herokuapp.com/';
 const URL_QUERY = baseURL + "list/";
 
+// ajax.setup, devolucion de llamadas
 jQuery.ajaxSetup({
     beforeSend: function () {
         $('#loader').show();
@@ -28,18 +30,19 @@ jQuery.ajaxSetup({
     success: function () { }
 });
 
+// Se espera al document.ready
 $(document).ready(function () {
 
-    //Initial Query
+    //Query incial, SearchProducts y getCategoies
     $(() => searchProducts(category = 0, page = 1, search = ''));
     $(() => getCategories());
 
-    //Show Search Modal
+    //Se muestra el modal de busqueda
     $('#searchToggleButton').click(() => {
         $('#searchModal').modal('show');
     });
 
-    //Search Button
+    //Boton de busqueda
     $('#searchButton').click(() => {
         searchProducts(
             category = PAGINATION.category,
@@ -51,9 +54,7 @@ $(document).ready(function () {
     });
 });
 
-// Search Products related to search keyword from REST API, updates pagination,
-
-// render Products card and pagination bar
+// Se buscan productos segun palabra ingresada en el input
 function searchProducts(category = 0, page = 1, search = '') {
 
 
@@ -81,8 +82,10 @@ function searchProducts(category = 0, page = 1, search = '') {
     });
 }
 
+
+//Obtenemos getCategories
 function getCategories() {
-    // Get Categories from REST API
+ 
 
     const url = baseURL + "categories/"
     $.ajax({
@@ -93,14 +96,17 @@ function getCategories() {
         });
         renderCategoriesMenu();
     }).fail(() => {
-        alert("Failed to Load Categories Data");
+        alert("Error al cargar los datos");
     });
 
 }
 
-function renderProduct(data) {
-    // Render products Cards from data object
 
+//Render de las Cards desde data object
+function renderProduct(data) {
+    
+    
+    // Render de las Cards 
     $("#products").empty();
     {
         var last_category = '';
@@ -112,12 +118,12 @@ function renderProduct(data) {
                     </div>`)
                 last_category = product.category.name;
             }
-            // Controling not available images
+            // Control de ImageNotAviable 
             if (product.url_image == null ||
                 product.url_image == '') {
                 product.url_image = 'images/image-not-available.png';
             }
-            // Insert Card product
+            // Se insertan datos a las Cards
             $("#products").append(
                 `<div class="card m-2" style="width: 16rem;">
                         <img class="card-img-top" src="` + product.url_image + `" alt="` + product.name + `">
@@ -135,12 +141,14 @@ function renderProduct(data) {
             );
         }));
     }
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.body.scrollTop = 0; // Controlador Safari
+    document.documentElement.scrollTop = 0; // controlador Chrome, Firefox, IE and Opera
 }
 
+
+// uso de datos de var PAGINATION
 function setValuesPagination(data, category, search, page) {
-    // Update Pagination Object values
+    
 
     PAGINATION.search = search;
     PAGINATION.totalRecords = data.count;
@@ -152,14 +160,13 @@ function setValuesPagination(data, category, search, page) {
 }
 
 function renderPagination() {
-    // Render pagination navbar from pagination object values
     var $pag = $('.paginationBar');
     let prev = PAGINATION.page - 1;
     let next = PAGINATION.page + 1;
-    // console.log(JSON.stringify(PAGINATION))
+
     $pag.empty();
 
-    // Previous pagination button
+    //OnClick pagina anterior
     $pag.append(
         `<li class="page-item">
             <a onClick="searchProducts('
@@ -170,7 +177,7 @@ function renderPagination() {
         </li>`
     );
 
-    // Page numbers pagination buttons
+    // Numero de paginas
     for (let i = 1; i <= PAGINATION.totalPages; i++) {
         if (PAGINATION.page === i) {
             $pag.append(
@@ -193,7 +200,7 @@ function renderPagination() {
         }
     }
 
-    // Next pagination button
+    // OnCLick siguiente pagina
     $pag.append(
         `<li class="page-item">
             <a onClick="searchProducts(
@@ -204,34 +211,34 @@ function renderPagination() {
         </li>`
     );
 
-    // Disable next 'n previous buttons according to actual page
+    // Desactiva prev, next dependiendo de la pagina en la que se encuentre
     if (PAGINATION.previous === null)
         $("#paginationBar li:first").addClass("disabled");
     if (PAGINATION.next === null)
         $("#paginationBar li:last").addClass("disabled");
 }
 
-function renderCategoriesMenu() {
-    // Insert Categories in dropdown menu
-    $('#categories_menu').append(
-        `<li><a id="cat_` + 0 + `"
-            onClick="setActiveAndSearch(` + 0 + `)"
-            class="dropdown-item" role="button">` + 'Todo producto' + `</a>
-        </li>`
-    );
-    len = Object.keys(CATEGORIES).length;
-    for (let i = 1; i <= len; i++) {
-        $('#categories_menu').append(
-            `<li><a id="cat_` + i + `"
-                onClick="setActiveAndSearch(` + i + `)"
-                class="dropdown-item" role="button">` + CATEGORIES[i] + `</a>
-            </li>`
-        );
-    }
-}
+// Menú paginacion y orden
+// function renderCategoriesMenu() {
+//     $('#categories_menu').append(
+//         `<li><a id="cat_` + 0 + `"
+//             onClick="setActiveAndSearch(` + 0 + `)"
+//             class="dropdown-item" role="button">` + 'Todo producto' + `</a>
+//         </li>`
+//     );
+//     len = Object.keys(CATEGORIES).length;
+//     for (let i = 1; i <= len; i++) {
+//         $('#categories_menu').append(
+//             `<li><a id="cat_` + i + `"
+//                 onClick="setActiveAndSearch(` + i + `)"
+//                 class="dropdown-item" role="button">` + CATEGORIES[i] + `</a>
+//             </li>`
+//         );
+//     }
+// }
 
 function setOrdering(ordering = 'category_id') {
-    // Set active ordering option and in dropdown menu
+   
 
     let ordering_title = {
         'All': 'All Products',
@@ -255,23 +262,23 @@ function setOrdering(ordering = 'category_id') {
         search = PAGINATION.search);
 }
 
-function setActiveAndSearch(category = 0) {
-    // Auxiliar function for searching by category and
-    // set active the category in dropdown menu
+// function setActiveAndSearch(category = 0) {
+//     // Auxiliar function for searching by category and
+//     // set active the category in dropdown menu
 
-    $('#categories_menu').children().children().removeClass("active");
-    $('#cat_' + category).addClass("active");
+//     $('#categories_menu').children().children().removeClass("active");
+//     $('#cat_' + category).addClass("active");
 
-    $('#selectedCategory').text(' ' + CATEGORIES[category.toString()]);
+//     $('#selectedCategory').text(' ' + CATEGORIES[category.toString()]);
 
-    searchProducts(
-        category = category,
-        page = 1,
-        search = PAGINATION.search);
-}
+//     searchProducts(
+//         category = category,
+//         page = 1,
+//         search = PAGINATION.search);
+// }
 
-function renderError() {
-    var $pag = $('#paginationBar');
-    $pag.append('<h3 class="text-danger">Failed to load products...</h3>')
-}
+// function renderError() {
+//     var $pag = $('#paginationBar');
+//     $pag.append('<h3 class="text-danger">Failed to load products...</h3>')
+// }
 
