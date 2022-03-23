@@ -32,9 +32,7 @@
 
 <body>
 
-    <!-- JUMBOTRON -->
 <!-- Header -->
-<!-- JUMBOTRON -->
 <header class="jumbotron">
     <div class="container">
         <div class="row row-header">
@@ -73,6 +71,8 @@
                     id="selectedOrdering" style="width: 8rem;">Category</span> 
             </button>
             <ul class="dropdown-menu" id="ordering_menu" aria-labelledby="dropdownOrderingType">
+
+                
                 <li><a id="ord-category_id"
                     onClick="setOrdering('category_id')"
                     class="dropdown-item active" role="button">Category</a>
@@ -93,6 +93,12 @@
                     onClick="setOrdering('-price')"
                     class="dropdown-item" role="button">Higher price first</a>
                 </li>
+
+                <li><a id="ord-category_All"
+                    onClick="setOrdering('All')"
+                    class="dropdown-item active" role="button">All</a>
+                </li>
+                
             </ul>
         </div>
 
