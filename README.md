@@ -1,6 +1,6 @@
 # Bsale_Front_Doc
 
-La implementación  del cliente que consume la API-REST de django-rest es mediante [Vanilla js](https://platzi.com/fundamentos-javascript-2017/tutoriales/que-es-vanilla-js-o-javascript-puro/) considerando el uso de librerias Jquery ajax, popper.js, bootstrap, HTML, y CSS  Buscador implementado, categorización, paginación y orden. Manejo de errores 404 y 500
+La implementación  del cliente que consume la API-REST de django-rest es mediante [Vanilla js](https://platzi.com/fundamentos-javascript-2017/tutoriales/que-es-vanilla-js-o-javascript-puro/) considerando el uso de librerias Jquery ajax, bootstrap, HTML, y CSS  Buscador implementado, categorización, paginación y orden. Manejo de errores 404 y 500
 
 ## Link hacia la app
 
